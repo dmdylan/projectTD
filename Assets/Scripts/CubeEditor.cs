@@ -4,7 +4,7 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 [SelectionBase]
-public class EditorSnap : MonoBehaviour
+public class CubeEditor : MonoBehaviour
 {
     [SerializeField] [Range(1f, 20f)] float gridSize = 10f;
     TextMesh textMesh;
@@ -21,8 +21,9 @@ public class EditorSnap : MonoBehaviour
         snapPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
         snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
 
-        transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
-
-        textMesh.text = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        transform.position = new Vector3(snapPos.x, -5f, snapPos.z);
+        string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        textMesh.text = labelText;
+        gameObject.name = "Cube " + labelText;
     }
 }
