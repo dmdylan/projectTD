@@ -17,17 +17,19 @@ public class Waypoint : MonoBehaviour
         return gridSize;
     }
 
-    public void SetGridPos()
-    {
-        gridPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
-        gridPos.y = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
-    }
-
     public Vector2Int GetGridPos()
     {
-        return gridPos;
+        return new Vector2Int(
+        gridPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize,
+        gridPos.y = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize
+        );
     }
 
+    public void SetTopColor(Color color)
+    {
+        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
+    }
     // Update is called once per frame
     void Update()
     {
