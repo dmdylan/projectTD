@@ -6,6 +6,8 @@ public class Waypoint : MonoBehaviour
 {
     Vector2Int gridPos;
     const int gridSize = 10;
+    public bool isExplored = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,8 @@ public class Waypoint : MonoBehaviour
     public Vector2Int GetGridPos()
     {
         return new Vector2Int(
-        gridPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize,
-        gridPos.y = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize
+        gridPos.x = Mathf.RoundToInt(transform.position.x / gridSize),
+        gridPos.y = Mathf.RoundToInt(transform.position.z / gridSize)
         );
     }
 

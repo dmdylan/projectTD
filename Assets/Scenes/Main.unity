@@ -1796,7 +1796,7 @@ PrefabInstance:
         type: 3}
       propertyPath: endWaypoint
       value: 
-      objectReference: {fileID: 936743210}
+      objectReference: {fileID: 1664187766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12686b70b6063743a57b80291b6f083, type: 3}
 --- !u!114 &574791570522998722 stripped
